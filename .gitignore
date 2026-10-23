@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Data files (too large for git)
+data/ab9206c3bac8b47df55ac79d63c06e77883f261842132e69ee1420d96cdafea9/
+data/processed/*.npy
+data/*.zip
+data/*.csv
+
+# Model files (too large for git)
+models/best/*.zip
+models/checkpoints/*.zip
+*.h5
+*.pkl
+*.pt
+
+# Logs
+logs/
+*.log
+tensorboard/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Environment
+.env
+.env.local

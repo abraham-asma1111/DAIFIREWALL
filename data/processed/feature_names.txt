@@ -1,0 +1,20 @@
+0: Flow Duration
+1: Total Fwd Packets
+2: Total Backward Packets
+3: Total Length of Fwd Packets
+4: Total Length of Bwd Packets
+5: Flow Bytes/s
+6: Flow Packets/s
+7: Flow IAT Mean
+8: Flow IAT Std
+9: Flow IAT Max
+10: Fwd IAT Mean
+11: Bwd IAT Mean
+12: SYN Flag Count
+13: RST Flag Count
+14: PSH Flag Count
+15: ACK Flag Count
+16: Destination Port
+17: Packet Length Mean
+18: Packet Length Variance
+19: Average Packet Size
