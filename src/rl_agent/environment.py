@@ -164,35 +164,36 @@ class FirewallEnv(gym.Env):
         """
         Calculate reward based on action and true label
         
-        Reward Philosophy:
-        - Security is CRITICAL: False negatives heavily penalized (-15)
-        - Availability matters: False positives penalized but less (-8)
-        - Conservative actions (rate_limit, flag) have intermediate rewards
+        Reward Philosophy (UPDATED - Favor Security):
+        - Missing attacks is CATASTROPHIC: -25 (increased from -15)
+        - Blocking attacks is HIGHLY rewarded: +15 (increased from +10)
+        - False positives still penalized but reduced: -5 (reduced from -8)
+        - Encourage RATE_LIMIT for uncertain cases
         """
         
         is_attack = (true_label == 1)
         
         if action == 0:  # ALLOW
             if is_attack:
-                return -15  # Security breach! Very bad
+                return -25  # CATASTROPHIC: Security breach! 
             else:
                 return +1   # Correct, normal operation
         
         elif action == 1:  # BLOCK
             if is_attack:
-                return +10  # Excellent! Stopped attack
+                return +15  # EXCELLENT: Stopped attack!
             else:
-                return -8   # False positive, service disruption
+                return -5   # False positive, but security first
         
         elif action == 2:  # RATE_LIMIT
             if is_attack:
-                return +5   # Good, slowed down attack
+                return +8   # Good, slowed down attack
             else:
-                return -5   # Unnecessary throttling
+                return -3   # Minor disruption
         
         elif action == 3:  # FLAG_MONITOR
             if is_attack:
-                return +2   # Conservative but acceptable
+                return +4   # Acceptable, caught it
             else:
                 return -1   # Wasted monitoring resources
         
