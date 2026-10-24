@@ -2,8 +2,6 @@
 RL Agent Training Script - PPO Algorithm
 Trains the firewall agent to detect and block cyberattacks
 
-Author: Abraham Asmamaw Mulugeta
-Date: October 23, 2026
 """
 
 # CRITICAL: Disable TensorFlow before any imports (prevents conflicts with PyTorch)

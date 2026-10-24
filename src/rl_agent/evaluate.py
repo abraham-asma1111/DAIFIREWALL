@@ -2,8 +2,6 @@
 Model Evaluation Script
 Evaluates the trained PPO agent on test data and generates metrics
 
-Author: Abraham Asmamaw Mulugeta
-Date: October 23, 2026
 """
 
 import torch
@@ -32,7 +30,10 @@ print(f"   ✓ Benign: {(y_test==0).sum():,} | Attacks: {(y_test==1).sum():,}")
 
 # Load model
 print("\n🤖 Loading trained model...")
-if os.path.exists("models/firewall_final.zip"):
+if os.path.exists("models/firewall_all_data.zip"):
+    model_path = "models/firewall_all_data"
+    print("   ✓ Loading: models/firewall_all_data.zip")
+elif os.path.exists("models/firewall_final.zip"):
     model_path = "models/firewall_final"
     print("   ✓ Loading: models/firewall_final.zip")
 elif os.path.exists("models/firewall_interrupted.zip"):
@@ -43,7 +44,7 @@ elif os.path.exists("models/test_model.zip"):
     print("   ✓ Loading: models/test_model.zip")
 else:
     print("   ✗ No trained model found!")
-    print("   Run training first: python TRAIN.py")
+    print("   Run training first: python TRAIN_ALL_DATA.py")
     sys.exit(1)
 
 model = PPO.load(model_path)

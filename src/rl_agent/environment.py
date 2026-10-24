@@ -2,8 +2,6 @@
 Custom Gymnasium Environment for Network Firewall RL Agent
 The agent observes network flow features and decides: ALLOW, BLOCK, RATE_LIMIT, or FLAG_MONITOR
 
-Author: Abraham Asmamaw Mulugeta
-Date: October 23, 2026
 """
 
 import gymnasium as gym

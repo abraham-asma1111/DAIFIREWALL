@@ -2,8 +2,6 @@
 CICIDS 2017 Dataset Preprocessor
 Loads, cleans, normalizes, and saves network flow data for RL training.
 
-Author: Abraham Asmamaw Mulugeta
-Date: October 23, 2026
 """
 
 import pandas as pd
