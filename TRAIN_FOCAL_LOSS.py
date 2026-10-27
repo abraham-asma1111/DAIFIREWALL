@@ -35,7 +35,7 @@ class ThreatCentricFirewallEnv(gym.Env):
     
     metadata = {"render_modes": ["human"]}
     
-    def __init__(self, X_data, y_data, attack_oversample_ratio=2.0, shuffle=True):
+    def __init__(self, X_data, y_data, attack_oversample_ratio=1.3, shuffle=True):
         """
         Args:
             X_data: Network features
@@ -307,7 +307,7 @@ print("\n🎮 Creating Threat-Centric Environment...")
 env = ThreatCentricFirewallEnv(
     X_combined, 
     y_combined, 
-    attack_oversample_ratio=2.0,  # See 2x more attacks
+    attack_oversample_ratio=1.3,  # Reduced from 2.0 to fix FPR issue
     shuffle=True
 )
 vec_env = DummyVecEnv([lambda: env])

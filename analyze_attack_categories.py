@@ -30,9 +30,12 @@ print(f"   ✓ Attacks: {(y_test_binary==1).sum():,}")
 label_mapping = {}
 with open("data/processed/label_mapping.txt", 'r') as f:
     for line in f:
-        if ':' in line:
-            idx, label = line.strip().split(': ')
-            label_mapping[int(idx)] = label
+        line = line.strip()
+        if '=' in line and line[0].isdigit():
+            parts = line.split('=', 1)
+            idx = int(parts[0].strip())
+            label = parts[1].strip()
+            label_mapping[idx] = label
 
 print(f"\n   Attack types in dataset: {len(label_mapping)}")
 for idx, label in sorted(label_mapping.items()):
