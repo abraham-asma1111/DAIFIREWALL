@@ -11,8 +11,8 @@ A self-learning network firewall using **Reinforcement Learning ** to detect and
 - 🏛️ Ethiopian Government (INSA)
 - 🏦 Banks (National Bank of Ethiopia, Commercial Bank, Dashen, Awash)
 - 💳 Fintech companies
-- 📡 Teleco
-Team Name:
+- 📡 Telecom sector
 
+Team Name:
 
 -Abraham Asmamaw  CTC-2223-26
